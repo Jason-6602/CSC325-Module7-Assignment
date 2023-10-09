@@ -4,6 +4,8 @@
 
 package com.mycompany.csc325_oop_designreview_lab;
 
+import java.util.Scanner;
+
 /**
  *
  * @author MoaathAlrajab
@@ -11,35 +13,48 @@ package com.mycompany.csc325_oop_designreview_lab;
 public class MainClass {
 
  public static void main(String[] args) {
-		// ToDo 5: Fix the error
 
-		// ToDo 6: Fix the constructor of the Student class
 
-                // Todo 7: Create two classes for Freshman and Senior 
+		// ToDo 6: Fix the constructor of the Student class(done)
+
+                // Todo 7: Create two classes for Freshman and Senior (done)
 
                 // ToDo 8: The senior class should have a minimum of 85 credits  
 
-		// ToDo 9: Add a toString method for the Student class
-		// ToDo 10: Add a toString method for the Freshman class
+		// ToDo 9: Add a toString method for the Student class (done)
+		// ToDo 10: Add a toString method for the Freshman class (done)
 
-		Student std1= new Student("James", 20);
-                // ToDo 11: Add a toString method for the Senior class
 
-		Freshman std1= new Student("James", 20, 12); // name, age, credits
+                // ToDo 11: Add a toString method for the Senior class(done)
 
-                Senior std2 = new Student("John", 30, 90);
+	  // Create some new objects to demonstrate the output
+	 Student std1 = new Freshman("James", (short)20, 12);
 
-		// ToDo 12: Set the gpa of the student using the scanner and user
-		// 			input and then print the output.
+	 Student std2 = new Senior("John", (short)30, 90);
 
-		System.out.println(std1);
+		// ToDo 12: Set the gpa of the student using the scanner and user input and then print the output.
+				//OUTPUT - first set the GPA via User input
+	 			setGpa(std1);
+				setGpa(std2);
 
-                System.out.println(std2);
+				//Make sure to use the to string method to format the desired output format
+				System.out.println(std1.toString());
+                System.out.println(std2.toString());
 
 		// ToDo 13: add comments and explain your code
 
 		// ToDo 14: submit using a pull request.
 	}
+	private static void setGpa(Student student) {
+	 	//Create Scanner Object
+		Scanner scanner = new Scanner(System.in);
 
+		//Prompt for user input
+		System.out.print("Enter GPA for " + student.getName() + ": ");
+		double gpa = scanner.nextDouble();
+
+		// Set the GPA using the setter method in the Student class
+		student.setGpa(gpa);
+	}
 }
 
